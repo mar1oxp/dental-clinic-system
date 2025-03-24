@@ -95,3 +95,151 @@ System zaprojektowano z myślą o łatwej rozszerzalności:
 2. **API**: Pełne REST API umożliwiające integrację z systemami zewnętrznymi
 3. **Konfigurowalność**: Możliwość dostosowania systemu do specyficznych potrzeb kliniki
 4. **Skalowalność**: Architektura umożliwiająca obsługę od małych gabinetów po duże sieci klinik
+
+
+# System Zarządzania Klinikami Stomatologicznymi 🦷
+
+Kompleksowy system do zarządzania klinikami stomatologicznymi z architekturą multi-tenant, umożliwiający efektywne zarządzanie personelem, pacjentami, wizytami i rozliczeniami dla wielu klinik w ramach jednej instancji aplikacji.
+
+## 📋 Funkcjonalności
+
+- **Architektura Multi-tenant** - zarządzanie wieloma klinikami z pełną izolacją danych
+- **Lokalizacje i gabinety** - obsługa wielu lokalizacji dla jednej kliniki
+- **Zarządzanie użytkownikami** - role i uprawnienia, specjalizacje, harmonogramy pracy
+- **Zarządzanie umowami i rozliczeniami** - różne typy umów, stawki rozliczeniowe
+- **System dokumentów i formularzy** - przechowywanie i zarządzanie dokumentami pracowników
+- **System oceny pracowników** - konfigurowalne kryteria oceny
+- **Zarządzanie pacjentami** - pełna karta pacjenta, historia leczenia
+- **Planowanie wizyt** - zaawansowany kalendarz, przypomnienia
+- **Plany leczenia** - etapy realizacji, wyceny
+- **Rozliczenia i płatności** - faktury, paragony, różne formy płatności
+- **Bezpieczeństwo i audyt** - logowanie wszystkich zmian, kontrola dostępu
+
+## 🚀 Technologie
+
+### Backend
+- Node.js
+- NestJS (TypeScript)
+- TypeORM
+- PostgreSQL
+- Redis
+- JWT dla uwierzytelniania
+- Swagger dla dokumentacji API
+
+### Frontend
+- React
+- TypeScript
+- Material-UI
+- Redux Toolkit
+- React Query
+- React Router
+- Axios
+
+## 🛠️ Instalacja
+
+### Wymagania wstępne
+- Node.js (v16 lub nowszy)
+- npm lub yarn
+- PostgreSQL
+- Redis
+- Docker i Docker Compose (opcjonalnie)
+
+### Klonowanie repozytorium
+```bash
+git clone https://github.com/your-username/dental-clinic-system.git
+cd dental-clinic-system
+```
+
+### Konfiguracja zmiennych środowiskowych
+```bash
+# Backend
+cd backend
+cp .env.example .env
+# Edytuj plik .env dodając odpowiednie dane
+
+# Frontend
+cd ../frontend
+cp .env.example .env
+# Edytuj plik .env dodając odpowiednie dane
+```
+
+### Instalacja zależności
+```bash
+# Backend
+cd backend
+npm install
+
+# Frontend
+cd ../frontend
+npm install
+```
+
+### Uruchomienie bazy danych (z użyciem Docker)
+```bash
+docker-compose up -d postgres redis
+```
+
+### Migracje bazy danych
+```bash
+cd backend
+npm run migration:run
+```
+
+### Uruchomienie aplikacji w trybie deweloperskim
+```bash
+# Backend
+cd backend
+npm run start:dev
+
+# Frontend
+cd ../frontend
+npm run start
+```
+
+### Uruchomienie z użyciem Docker Compose
+```bash
+docker-compose up -d
+```
+
+## 📚 Dokumentacja
+
+Pełna dokumentacja dostępna w katalogu `/docs`:
+- [Architektura systemu](/docs/architecture/README.md)
+- [Dokumentacja API](/docs/api/README.md)
+- [Schematy bazy danych](/docs/database/README.md)
+- [Przewodniki użytkownika](/docs/guides/README.md)
+
+## 🧪 Testy
+
+```bash
+# Backend - testy jednostkowe
+cd backend
+npm run test
+
+# Backend - testy e2e
+npm run test:e2e
+
+# Frontend
+cd ../frontend
+npm run test
+```
+
+## 🔄 CI/CD
+
+Projekt wykorzystuje GitHub Actions do automatycznego:
+- Uruchamiania testów
+- Lintowania kodu
+- Budowania i publikowania obrazów Docker
+- Wdrażania w środowiskach staging i produkcyjnym
+
+## 📝 Kontrybucja
+
+Zachęcamy do wnoszenia wkładu w projekt! Zapoznaj się z [Przewodnikiem dla kontrybutorów](CONTRIBUTING.md), aby dowiedzieć się więcej o procesie tworzenia pull requestów.
+
+## 📜 Licencja
+
+Ten projekt jest licencjonowany na warunkach licencji MIT - szczegóły w pliku [LICENSE](LICENSE).
+
+## 📞 Kontakt
+
+W przypadku pytań lub problemów, otwórz issue lub skontaktuj się z zespołem za pośrednictwem email@example.com.
